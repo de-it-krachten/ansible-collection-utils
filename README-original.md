@@ -27,7 +27,7 @@ Renders a Jinja2 template string that is stored in a variable.
 
 ```yaml
 - set_fact:
-    rendered: "{{ my_jinja_string | deitkrachten.utils.render_jinja(hostvars[inventory_hostname]) }}"
+    rendered: "{{ my_jinja_string | my_namespace.jinja_utils.render_jinja(hostvars[inventory_hostname]) }}"
 ```
 
 **Arguments:**
@@ -47,7 +47,7 @@ Renders a Jinja2 template string that is stored in a variable.
 
   tasks:
     - set_fact:
-        rendered: "{{ template_string | deitkrachten.utils.render_jinja(hostvars[inventory_hostname]) }}"
+        rendered: "{{ template_string | my_namespace.jinja_utils.render_jinja(hostvars[inventory_hostname]) }}"
 
     - debug:
         var: rendered
